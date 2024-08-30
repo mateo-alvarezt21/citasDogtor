@@ -2,7 +2,7 @@ name: Code format
 on: [push, pull_request]
 
 jobs:
-  format-check:
+  check-format:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,5 +17,23 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check formatting
+      - name: Check format
         run: npm run format:check
+  compilation:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.0.3
+        with:
+          node-version: '20' 
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Compilation
+        run: npm run build
+      
