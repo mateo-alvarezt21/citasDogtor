@@ -31,7 +31,7 @@ function App() {
       <Header />
 
       <div className="mt-12 md:flex">
-        <Formulario
+              <Formulario
           pacientes={pacientes}
           setPacientes={setPacientes}
           paciente={paciente}
@@ -42,6 +42,7 @@ function App() {
           setPaciente={setPaciente}
           eliminarPaciente={eliminarPaciente}
         />
+                <h1>tengo futol</h1>
       </div>
     </div>
   );
